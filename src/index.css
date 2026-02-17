@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Rubik:wght@400;500;700&subset=cyrillic&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #171717;
+  --color-secondary: #404040;
+  --color-accent: #D4AF37;
+
+  --font-sans: "Nunito Sans", sans-serif;
+  --font-display: "Rubik", sans-serif;
+
+  --animate-fade-in: fadeIn 0.5s ease-out;
+  --animate-slide-up: slideUp 0.5s ease-out;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-white text-primary font-sans antialiased overflow-hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-bold;
+  }
+}
+
+/* Custom scroll bar hide */
+::-webkit-scrollbar {
+  display: none;
+}
