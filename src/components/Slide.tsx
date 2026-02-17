@@ -26,16 +26,16 @@ export const Slide = ({ perfume, isActive }: SlideProps) => {
                 {perfume.name.split(" ")[0]}
             </h1>
 
-            <div className="container relative z-10 h-full px-6 pt-20 pb-24 md:py-0 md:px-12 flex flex-col md:flex-row md:items-center md:justify-between pointer-events-none md:pointer-events-auto">
+            <div className="container relative z-10 h-full px-6 pt-24 pb-24 md:py-0 md:px-12 flex flex-col md:flex-row md:items-center md:justify-between pointer-events-none md:pointer-events-auto">
 
                 {/* Mobile: Centered Absolute Bottle (Dimmed for contrast) */}
                 {/* Desktop: Right Side Bottle (Full opacity) */}
-                <div className="absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50vh] h-[50vh] md:static md:w-1/2 md:h-auto md:translate-x-0 md:translate-y-0 flex justify-center items-center perspective-1000 z-0 md:z-auto pointer-events-none md:pointer-events-auto opacity-100 scale-90 md:scale-100 transition-opacity duration-500">
+                <div className="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40vh] h-[40vh] md:static md:w-1/2 md:h-auto md:translate-x-0 md:translate-y-0 flex justify-center items-center perspective-1000 z-0 md:z-auto pointer-events-none md:pointer-events-auto opacity-100 scale-90 md:scale-100 transition-opacity duration-500">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={isActive ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                         transition={{ duration: 1 }}
-                        className="relative z-20 w-[220px] h-[330px] md:w-[400px] md:h-[600px] rounded-[50px] md:rounded-[100px] overflow-hidden shadow-2xl"
+                        className="relative z-20 w-[180px] h-[270px] md:w-[400px] md:h-[600px] rounded-[40px] md:rounded-[100px] overflow-hidden shadow-2xl"
                         style={{ boxShadow: `0 25px 50px -12px ${perfume.colors.accent}40` }}
                     >
                         {perfume.video ? (
@@ -108,7 +108,7 @@ export const Slide = ({ perfume, isActive }: SlideProps) => {
                     <div className="hidden md:block md:h-8" />
 
                     {/* Bottom Section: Info */}
-                    <div className="md:space-y-8 mb-4 md:mb-0 space-y-4">
+                    <div className="md:space-y-8 mb-4 md:mb-0 space-y-6">
                         <motion.p
                             initial={{ opacity: 0 }}
                             animate={isActive ? { opacity: 0.95 } : { opacity: 0 }}
