@@ -30,7 +30,7 @@ export const Slide = ({ perfume, isActive }: SlideProps) => {
 
                 {/* Mobile: Centered Absolute Bottle (Dimmed for contrast) */}
                 {/* Desktop: Right Side Bottle (Full opacity) */}
-                <div className="absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50vh] h-[50vh] md:static md:w-1/2 md:h-auto md:translate-x-0 md:translate-y-0 flex justify-center items-center perspective-1000 z-0 md:z-auto pointer-events-none md:pointer-events-auto opacity-40 md:opacity-100 scale-90 md:scale-100 transition-opacity duration-500">
+                <div className="absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50vh] h-[50vh] md:static md:w-1/2 md:h-auto md:translate-x-0 md:translate-y-0 flex justify-center items-center perspective-1000 z-0 md:z-auto pointer-events-none md:pointer-events-auto opacity-100 scale-90 md:scale-100 transition-opacity duration-500">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={isActive ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
@@ -61,8 +61,8 @@ export const Slide = ({ perfume, isActive }: SlideProps) => {
                                 className="w-full h-full object-cover"
                             />
                         )}
-                        {/* Stronger overlay on mobile video to help text pop */}
-                        <div className="absolute inset-0 bg-black/30 md:bg-linear-to-t md:from-black/60 md:to-transparent pointer-events-none" />
+                        {/* Gradient overlay for desktop to help text pop */}
+                        <div className="absolute inset-0 hidden md:block md:bg-linear-to-t md:from-black/60 md:to-transparent pointer-events-none" />
                     </motion.div>
 
                     {/* Glow Effect */}
