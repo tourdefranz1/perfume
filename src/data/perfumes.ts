@@ -56,9 +56,9 @@ export const PERFUMES: Perfume[] = [
         description: "Восточно-цветочная композиция с глубоким, темным и провокационным характером.",
         usp: "землистый трюфель, горький шоколад",
         colors: {
-            bg: "#0f0518", // Deep Dark Violet
-            accent: "#d4af37", // Gold
-            text: "#efe5d9", // Warm off-white
+            bg: "#1a0b2e", // Richer Deep Purple
+            accent: "#a855f7", // Vibrant Purple
+            text: "#f3e8ff", // Light Lavender Text
         },
         image: "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=2000&auto=format&fit=crop", // Fallback
         video: orchidVideo,
