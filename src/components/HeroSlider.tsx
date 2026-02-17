@@ -112,7 +112,10 @@ export const HeroSlider = () => {
     }, []); // Run once, internal state managed via setters
 
     return (
-        <div className="relative w-full h-screen overflow-hidden bg-black text-white">
+        <div
+            className="relative w-full h-[100dvh] overflow-hidden text-white transition-colors duration-700"
+            style={{ backgroundColor: PERFUMES[currentIndex].colors.bg }}
+        >
             <Navigation />
 
             <AnimatePresence mode="wait">
@@ -138,11 +141,11 @@ export const HeroSlider = () => {
                             setCurrentIndex(idx);
                         }}
                         aria-label={`Слайд ${idx + 1}: ${p.name}`}
-                        className={`w-4 h-4 md:w-3 md:h-3 rounded-full transition-all duration-300 cursor-pointer min-h-[44px] min-w-[44px] md:min-h-0 md:min-w-0 flex items-center justify-center ${idx === currentIndex ? "" : ""}`}
+                        className="w-11 h-11 md:w-8 md:h-8 flex items-center justify-center cursor-pointer group"
                     >
                         <span className={`block rounded-full transition-all duration-300 ${idx === currentIndex
-                                ? "w-3 h-3 bg-white scale-125"
-                                : "w-2.5 h-2.5 bg-white/30 hover:bg-white/50"
+                            ? "w-3 h-3 bg-white scale-125 shadow-[0_0_15px_rgba(255,255,255,0.5)]"
+                            : "w-2.5 h-2.5 bg-white/30 group-hover:bg-white/60 scale-100"
                             }`} />
                     </button>
                 ))}

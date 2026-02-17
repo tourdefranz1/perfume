@@ -37,7 +37,9 @@
 
 @layer base {
   body {
-    @apply bg-black text-primary font-sans antialiased overflow-hidden;
+    @apply text-primary font-sans antialiased overflow-hidden;
+    height: 100dvh;
+    min-height: -webkit-fill-available;
   }
 
   h1,
@@ -48,6 +50,18 @@
   h6 {
     @apply font-display font-bold;
   }
+}
+
+.safe-pb {
+  padding-bottom: env(safe-area-inset-bottom, 20px);
+}
+
+.safe-pb-extra {
+  padding-bottom: calc(env(safe-area-inset-bottom, 20px) + 80px);
+}
+
+.safe-pt {
+  padding-top: env(safe-area-inset-top, 20px);
 }
 
 /* Custom scroll bar hide */
