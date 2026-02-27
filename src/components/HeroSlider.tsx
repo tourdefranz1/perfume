@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { PERFUMES } from "../data/perfumes";
 import { Slide } from "./Slide";
@@ -8,108 +8,70 @@ import { ChevronDown } from "lucide-react";
 export const HeroSlider = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
-    const touchStart = useRef<number | null>(null);
+    const isAnimatingRef = useRef(false);
 
-    const nextSlide = () => {
-        if (isAnimating) return;
-        setIsAnimating(true);
-        setCurrentIndex((prev) => (prev + 1) % PERFUMES.length);
-        setTimeout(() => setIsAnimating(false), 1000); // Debounce duration matching transition
-    };
-
-    const prevSlide = () => {
-        if (isAnimating) return;
-        setIsAnimating(true);
-        setCurrentIndex((prev) => (prev - 1 + PERFUMES.length) % PERFUMES.length);
-        setTimeout(() => setIsAnimating(false), 1000);
-    };
-
-    const handleWheel = (e: WheelEvent) => {
-        if (Math.abs(e.deltaY) < 50) return; // Threshold
-        if (e.deltaY > 0) nextSlide();
-        else prevSlide();
-    };
-
-    const handleTouchStart = (e: TouchEvent) => {
-        touchStart.current = e.touches[0].clientY;
-    };
-
-    const handleTouchEnd = (e: TouchEvent) => {
-        if (!touchStart.current) return;
-        const touchEnd = e.changedTouches[0].clientY;
-        const diff = touchStart.current - touchEnd;
-
-        if (Math.abs(diff) > 50) {
-            if (diff > 0) nextSlide();
-            else prevSlide();
-        }
-        touchStart.current = null;
-    };
-
+    // Keep ref in sync with state
     useEffect(() => {
-        window.addEventListener("wheel", handleWheel);
-        window.addEventListener("touchstart", handleTouchStart);
-        window.addEventListener("touchend", handleTouchEnd);
+        isAnimatingRef.current = isAnimating;
+    }, [isAnimating]);
+
+    const startAnimation = useCallback(() => {
+        setIsAnimating(true);
+        isAnimatingRef.current = true;
+        setTimeout(() => setIsAnimating(false), 1000);
+    }, []);
+
+    // Single useEffect for all gesture listeners — uses refs to avoid stale closures
+    useEffect(() => {
+        let touchStartY = 0;
+
+        const handleWheel = (e: WheelEvent) => {
+            if (isAnimatingRef.current) return;
+            if (Math.abs(e.deltaY) < 30) return;
+
+            startAnimation();
+            if (e.deltaY > 0) {
+                setCurrentIndex(prev => (prev + 1) % PERFUMES.length);
+            } else {
+                setCurrentIndex(prev => (prev - 1 + PERFUMES.length) % PERFUMES.length);
+            }
+        };
+
+        const handleTouchStart = (e: TouchEvent) => {
+            touchStartY = e.touches[0].clientY;
+        };
+
+        const handleTouchEnd = (e: TouchEvent) => {
+            if (isAnimatingRef.current) return;
+            const touchEndY = e.changedTouches[0].clientY;
+            const diff = touchStartY - touchEndY;
+
+            if (Math.abs(diff) < 50) return;
+
+            startAnimation();
+            if (diff > 0) {
+                setCurrentIndex(prev => (prev + 1) % PERFUMES.length);
+            } else {
+                setCurrentIndex(prev => (prev - 1 + PERFUMES.length) % PERFUMES.length);
+            }
+        };
+
+        window.addEventListener("wheel", handleWheel, { passive: false });
+        window.addEventListener("touchstart", handleTouchStart, { passive: false });
+        window.addEventListener("touchend", handleTouchEnd, { passive: false });
+
         return () => {
             window.removeEventListener("wheel", handleWheel);
             window.removeEventListener("touchstart", handleTouchStart);
             window.removeEventListener("touchend", handleTouchEnd);
         };
-    }, [isAnimating]); // Re-bind usually not needed if handleWheel is stable, but isAnimating check needs latest state or ref.
-    // Better implementation uses ref for isAnimating to avoid re-binding listeners.
-    // Converting to ref-based lock for cleaner effect dependencies.
+    }, [startAnimation]);
 
-    // Re-implementation with refs to avoid closure stale state
-    const isAnimatingRef = useRef(false);
-    useEffect(() => {
-        isAnimatingRef.current = isAnimating;
-    }, [isAnimating]);
-
-    const handleWheelRef = (e: WheelEvent) => {
-        if (isAnimatingRef.current) return;
-        if (Math.abs(e.deltaY) < 30) return;
-
-        if (e.deltaY > 0) {
-            setIsAnimating(true);
-            setCurrentIndex(prev => (prev + 1) % PERFUMES.length);
-            setTimeout(() => setIsAnimating(false), 1000);
-        } else {
-            setIsAnimating(true);
-            setCurrentIndex(prev => (prev - 1 + PERFUMES.length) % PERFUMES.length);
-            setTimeout(() => setIsAnimating(false), 1000);
-        }
-    };
-
-    // Actually, overriding the previous useEffect with correct one:
-    useEffect(() => {
-        const wheelListener = (e: WheelEvent) => handleWheelRef(e);
-        // Touch Logic separate
-        let ts = 0;
-        const touchStartListener = (e: TouchEvent) => { ts = e.touches[0].clientY; };
-        const touchEndListener = (e: TouchEvent) => {
-            if (isAnimatingRef.current) return;
-            const te = e.changedTouches[0].clientY;
-            if (ts - te > 50) { // Swipe Up -> Next
-                setIsAnimating(true);
-                setCurrentIndex(prev => (prev + 1) % PERFUMES.length);
-                setTimeout(() => setIsAnimating(false), 1000);
-            } else if (te - ts > 50) { // Swipe Down -> Prev
-                setIsAnimating(true);
-                setCurrentIndex(prev => (prev - 1 + PERFUMES.length) % PERFUMES.length);
-                setTimeout(() => setIsAnimating(false), 1000);
-            }
-        };
-
-        window.addEventListener("wheel", wheelListener, { passive: false });
-        window.addEventListener("touchstart", touchStartListener, { passive: false });
-        window.addEventListener("touchend", touchEndListener, { passive: false });
-
-        return () => {
-            window.removeEventListener("wheel", wheelListener);
-            window.removeEventListener("touchstart", touchStartListener);
-            window.removeEventListener("touchend", touchEndListener);
-        };
-    }, []); // Run once, internal state managed via setters
+    const goToSlide = useCallback((idx: number) => {
+        if (isAnimating || idx === currentIndex) return;
+        startAnimation();
+        setCurrentIndex(idx);
+    }, [isAnimating, currentIndex, startAnimation]);
 
     return (
         <div
@@ -136,10 +98,7 @@ export const HeroSlider = () => {
                 {PERFUMES.map((p, idx) => (
                     <button
                         key={idx}
-                        onClick={() => {
-                            if (isAnimating) return;
-                            setCurrentIndex(idx);
-                        }}
+                        onClick={() => goToSlide(idx)}
                         aria-label={`Слайд ${idx + 1}: ${p.name}`}
                         className="w-11 h-11 md:w-8 md:h-8 flex items-center justify-center cursor-pointer group"
                     >

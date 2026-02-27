@@ -38,12 +38,13 @@ export const Slide = ({ perfume, isActive }: SlideProps) => {
             }}
         >
             {/* Background Decor - Extremely Large Ghost Text */}
-            <h1
+            <div
+                aria-hidden="true"
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[30vw] font-display font-bold opacity-[0.03] whitespace-nowrap select-none pointer-events-none z-0"
                 style={{ color: perfume.colors.accent }}
             >
                 {perfume.name.split(" ")[0]}
-            </h1>
+            </div>
 
             {/* Content Wrapper */}
             <div className="container relative z-10 w-full h-full px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-0 pointer-events-auto overflow-y-auto md:overflow-hidden no-scrollbar">
