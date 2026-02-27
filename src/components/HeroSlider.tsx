@@ -5,7 +5,11 @@ import { Slide } from "./Slide";
 import { Navigation } from "./Navigation";
 import { ChevronDown } from "lucide-react";
 
-export const HeroSlider = () => {
+interface HeroSliderProps {
+    onCollectionsClick?: () => void;
+}
+
+export const HeroSlider = ({ onCollectionsClick }: HeroSliderProps) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
     const isAnimatingRef = useRef(false);
@@ -78,7 +82,7 @@ export const HeroSlider = () => {
             className="relative w-full h-[100dvh] overflow-hidden text-white transition-colors duration-700"
             style={{ backgroundColor: PERFUMES[currentIndex].colors.bg }}
         >
-            <Navigation />
+            <Navigation onCollectionsClick={onCollectionsClick} />
 
             <AnimatePresence mode="wait">
                 <motion.div

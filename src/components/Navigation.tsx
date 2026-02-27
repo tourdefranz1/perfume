@@ -1,14 +1,23 @@
 import { Menu, Search, ShoppingBag } from "lucide-react";
 
-export const Navigation = () => {
+interface NavigationProps {
+    onCollectionsClick?: () => void;
+}
+
+export const Navigation = ({ onCollectionsClick }: NavigationProps) => {
     return (
         <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-4 md:px-12 py-4 md:py-6 mix-blend-difference text-white">
-            <div className="text-lg md:text-xl font-bold font-display tracking-tighter">
+            <div className="text-lg md:text-xl font-bold font-display tracking-tighter cursor-pointer" onClick={() => window.location.reload()}>
                 RG_PERFUME
             </div>
 
             <div className="hidden md:flex gap-8 text-sm font-medium tracking-wide opacity-80">
-                <a href="#" className="hover:text-white transition-colors tracking-widest text-xs">КОЛЛЕКЦИИ</a>
+                <button
+                    onClick={onCollectionsClick}
+                    className="hover:text-white transition-colors tracking-widest text-xs cursor-pointer bg-transparent border-none"
+                >
+                    КОЛЛЕКЦИИ
+                </button>
                 <a href="#" className="hover:text-white transition-colors tracking-widest text-xs">О БРЕНДЕ</a>
             </div>
 
