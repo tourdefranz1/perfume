@@ -45,11 +45,15 @@ export const HeroSlider = ({ onCollectionsClick, onAboutClick }: HeroSliderProps
         };
 
         const handleTouchStart = (e: TouchEvent) => {
+            // Ignore swipes on buttons/interactive elements
+            if ((e.target as HTMLElement).closest('button, a')) return;
             touchStartY = e.touches[0].clientY;
         };
 
         const handleTouchEnd = (e: TouchEvent) => {
             if (isAnimatingRef.current) return;
+            if ((e.target as HTMLElement).closest('button, a')) return;
+            
             const touchEndY = e.changedTouches[0].clientY;
             const diff = touchStartY - touchEndY;
 

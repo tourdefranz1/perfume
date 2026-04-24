@@ -51,27 +51,27 @@ export const Slide = ({ perfume, isActive, onListenClick }: SlideProps) => {
             <div className="container relative z-10 w-full h-full px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-0 pointer-events-auto overflow-y-auto md:overflow-hidden no-scrollbar">
 
                 {/* 1. LEFT TEXT SIDE (Desktop) / TOP (Mobile) */}
-                <div className="flex flex-col items-center md:items-start text-center md:text-left pt-20 md:pt-0 md:w-[50%] md:pl-12 shrink-0">
+                <div className="flex flex-col items-center md:items-start text-center md:text-left pt-24 md:pt-0 md:w-[50%] md:pl-12 shrink-0">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                         transition={{ duration: 0.8 }}
                     >
                         <span
-                            className="inline-block px-3 py-1 mb-4 md:mb-8 text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase rounded-full border border-white/20 backdrop-blur-md"
+                            className="inline-block px-3 py-1 mb-2 md:mb-8 text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase rounded-full border border-white/20 backdrop-blur-md"
                             style={{ color: perfume.colors.accent, borderColor: `${perfume.colors.accent}40` }}
                         >
                             Эксклюзивный Дроп
                         </span>
                         <h2
-                            className="text-4xl md:text-[5.5rem] font-display font-bold leading-[1.1] mb-2 md:mb-6"
+                            className="text-4xl md:text-[5.5rem] font-display font-bold leading-[1.1] mb-1 md:mb-6"
                             style={{ color: perfume.colors.text }}
                         >
                             {perfume.name}
                         </h2>
                         {perfume.brand && (
                             <h3
-                                className="text-base md:text-3xl font-sans font-extralight tracking-[0.4em] opacity-80 mb-6 md:mb-12"
+                                className="text-base md:text-3xl font-sans font-extralight tracking-[0.4em] opacity-80 mb-2 md:mb-12"
                                 style={{ color: perfume.colors.text }}
                             >
                                 {perfume.brand}
@@ -105,12 +105,12 @@ export const Slide = ({ perfume, isActive, onListenClick }: SlideProps) => {
                 </div>
 
                 {/* 2. RIGHT/CENTER BOTTLE HUB (Desktop (magazine style - right) / Mobile (center)) */}
-                <div className="relative flex-1 flex items-center justify-center md:justify-end md:pr-12 shrink-0 mb-8 md:mb-0">
+                <div className="relative flex-1 flex items-center justify-center md:justify-end md:pr-12 shrink-0 mb-4 md:mb-0">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8, x: 50 }}
                         animate={isActive ? { opacity: 1, scale: 1, x: 0 } : { opacity: 0, scale: 0.8, x: 50 }}
                         transition={{ duration: 1.2, ease: "easeOut" }}
-                        className="relative z-20 w-[190px] h-[285px] md:w-[450px] md:h-[675px] rounded-[30px] md:rounded-[80px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.8)]"
+                        className="relative z-20 w-[170px] h-[255px] md:w-[450px] md:h-[675px] rounded-[30px] md:rounded-[80px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.8)]"
                     >
                         {perfume.video ? (
                             <video
@@ -147,7 +147,7 @@ export const Slide = ({ perfume, isActive, onListenClick }: SlideProps) => {
 
                 {/* 3. MOBILE ONLY: Description + Bottom Bar (Safe Area Optimized) */}
                 <div
-                    className="md:hidden flex flex-col gap-6 items-center text-center shrink-0 w-full pointer-events-auto safe-pb-extra"
+                    className="md:hidden flex flex-col gap-4 items-center text-center shrink-0 w-full pointer-events-auto pb-10"
                 >
                     <motion.p
                         initial={{ opacity: 0 }}
