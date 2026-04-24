@@ -89,7 +89,7 @@ export const HeroSlider = ({ onCollectionsClick, onAboutClick }: HeroSliderProps
             className="relative w-full h-[100dvh] overflow-hidden text-white transition-colors duration-700"
             style={{ backgroundColor: PERFUMES[currentIndex].colors.bg }}
         >
-            <Navigation onCollectionsClick={onCollectionsClick} onAboutClick={onAboutClick} />
+            <Navigation onCollectionsClick={onCollectionsClick} onAboutClick={onAboutClick} onContactClick={() => setIsModalOpen(true)} />
 
             <AnimatePresence mode="wait">
                 <motion.div

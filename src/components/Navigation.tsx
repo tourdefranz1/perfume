@@ -5,9 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 interface NavigationProps {
     onCollectionsClick?: () => void;
     onAboutClick?: () => void;
+    onContactClick?: () => void;
 }
 
-export const Navigation = ({ onAboutClick }: NavigationProps) => {
+export const Navigation = ({ onAboutClick, onContactClick }: NavigationProps) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     return (
@@ -57,7 +58,7 @@ export const Navigation = ({ onAboutClick }: NavigationProps) => {
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: -10, scale: 0.95 }}
                             transition={{ duration: 0.3, ease: "easeOut" }}
-                            className="absolute top-[72px] right-4 w-[220px] z-50 md:hidden rounded-2xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col p-2"
+                            className="absolute top-[72px] right-4 w-[220px] z-50 md:hidden rounded-2xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col p-2 gap-1"
                             style={{ 
                                 background: 'rgba(255, 255, 255, 0.05)', 
                                 backdropFilter: 'blur(24px)',
@@ -74,6 +75,17 @@ export const Navigation = ({ onAboutClick }: NavigationProps) => {
                                 className="flex items-center justify-center w-full px-4 py-4 rounded-xl text-sm font-bold tracking-widest text-white hover:bg-white/10 active:bg-white/20 transition-colors"
                             >
                                 О БРЕНДЕ
+                            </a>
+                            <a
+                                href="#"
+                                onClick={(e) => { 
+                                    e.preventDefault(); 
+                                    setIsMobileMenuOpen(false);
+                                    onContactClick?.(); 
+                                }}
+                                className="flex items-center justify-center w-full px-4 py-4 rounded-xl text-sm font-bold tracking-widest text-white hover:bg-white/10 active:bg-white/20 transition-colors"
+                            >
+                                КОНТАКТЫ
                             </a>
                         </motion.div>
                     </>
