@@ -65,9 +65,9 @@ export const Navigation = ({ onAboutClick, onContactClick }: NavigationProps) =>
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: -10, scale: 0.95 }}
                             transition={{ duration: 0.3, ease: "easeOut" }}
-                            className="absolute top-[72px] right-4 w-[220px] z-50 md:hidden rounded-2xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col p-2 gap-1"
+                            className="absolute top-[72px] right-4 w-[220px] z-50 md:hidden rounded-2xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.7)] overflow-hidden flex flex-col p-2 gap-1"
                             style={{ 
-                                background: 'rgba(255, 255, 255, 0.05)', 
+                                background: 'rgba(0, 0, 0, 0.65)', 
                                 backdropFilter: 'blur(24px)',
                                 WebkitBackdropFilter: 'blur(24px)'
                             }}
