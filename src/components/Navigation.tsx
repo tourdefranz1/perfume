@@ -25,6 +25,13 @@ export const Navigation = ({ onAboutClick, onContactClick }: NavigationProps) =>
                 >
                     О БРЕНДЕ
                 </a>
+                <a
+                    href="#"
+                    onClick={(e) => { e.preventDefault(); onContactClick?.(); }}
+                    className="hover:text-white transition-colors tracking-widest text-xs cursor-pointer"
+                >
+                    КОНТАКТЫ
+                </a>
             </div>
 
             <div className="flex items-center gap-4 md:gap-6 relative z-50">
