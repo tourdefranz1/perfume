@@ -52,12 +52,7 @@ export function AboutPage({ onBack }: AboutPageProps) {
                     <span className="hidden sm:inline">Назад</span>
                 </button>
                 <div className="text-base font-bold tracking-widest">RG_PERFUME</div>
-                <button
-                    onClick={() => setIsModalOpen(true)}
-                    className="text-xs font-bold tracking-widest text-white/50 hover:text-white transition-colors duration-200 cursor-pointer uppercase min-h-[44px] px-2"
-                >
-                    Контакты
-                </button>
+                <div className="w-[44px]" /> {/* Spacer to keep title centered or just empty space */}
             </nav>
 
             {/* ── HERO ── */}
