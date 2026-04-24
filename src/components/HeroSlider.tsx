@@ -4,14 +4,17 @@ import { PERFUMES } from "../data/perfumes";
 import { Slide } from "./Slide";
 import { Navigation } from "./Navigation";
 import { ChevronDown } from "lucide-react";
+import { ContactModal } from "./ContactModal";
 
 interface HeroSliderProps {
     onCollectionsClick?: () => void;
+    onAboutClick?: () => void;
 }
 
-export const HeroSlider = ({ onCollectionsClick }: HeroSliderProps) => {
+export const HeroSlider = ({ onCollectionsClick, onAboutClick }: HeroSliderProps) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const isAnimatingRef = useRef(false);
 
     // Keep ref in sync with state
@@ -82,7 +85,7 @@ export const HeroSlider = ({ onCollectionsClick }: HeroSliderProps) => {
             className="relative w-full h-[100dvh] overflow-hidden text-white transition-colors duration-700"
             style={{ backgroundColor: PERFUMES[currentIndex].colors.bg }}
         >
-            <Navigation onCollectionsClick={onCollectionsClick} />
+            <Navigation onCollectionsClick={onCollectionsClick} onAboutClick={onAboutClick} />
 
             <AnimatePresence mode="wait">
                 <motion.div
@@ -93,7 +96,7 @@ export const HeroSlider = ({ onCollectionsClick }: HeroSliderProps) => {
                     transition={{ duration: 0.8 }}
                     className="absolute inset-0 w-full h-full"
                 >
-                    <Slide perfume={PERFUMES[currentIndex]} isActive={true} />
+                    <Slide perfume={PERFUMES[currentIndex]} isActive={true} onListenClick={() => setIsModalOpen(true)} />
                 </motion.div>
             </AnimatePresence>
 
@@ -121,10 +124,12 @@ export const HeroSlider = ({ onCollectionsClick }: HeroSliderProps) => {
 
             {/* Social Footer (Fixed) */}
             <div className="absolute bottom-8 left-12 z-40 hidden md:flex gap-6 text-xs font-bold tracking-widest opacity-60">
-                <a href="#" className="hover:text-white transition-colors">ИНСТАГРАМ</a>
-                <a href="#" className="hover:text-white transition-colors">ТЕЛЕГРАМ</a>
-                <a href="#" className="hover:text-white transition-colors">КОНТАКТЫ</a>
+                <a href="https://www.instagram.com/rg.parfume/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">ИНСТАГРАМ</a>
+                <a href="https://t.me/RGparfume" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">ТЕЛЕГРАМ</a>
+                <button onClick={() => setIsModalOpen(true)} className="hover:text-white transition-colors tracking-widest uppercase cursor-pointer">КОНТАКТЫ</button>
             </div>
+
+            <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </div>
     );
 };

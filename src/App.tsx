@@ -2,9 +2,10 @@ import { useState } from "react";
 import { HeroSlider } from "./components/HeroSlider";
 import { CatalogBentoGrid } from "./components/catalog/CatalogBentoGrid";
 import { CatalogPage } from "./components/pages/CatalogPage";
+import { AboutPage } from "./components/pages/AboutPage";
 
 function App() {
-  const [currentView, setCurrentView] = useState<'home' | 'categories' | 'catalog'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'categories' | 'catalog' | 'about'>('home');
   const [selectedBrand, setSelectedBrand] = useState<string | undefined>();
 
   const handleSelectBrand = (brandId?: string) => {
@@ -22,6 +23,15 @@ function App() {
     setCurrentView('categories');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const handleGoToAbout = () => {
+    setCurrentView('about');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  if (currentView === 'about') {
+    return <AboutPage onBack={handleBackToHome} />;
+  }
 
   if (currentView === 'catalog') {
     return <CatalogPage initialBrand={selectedBrand} onBack={handleBackToHome} />;
@@ -54,7 +64,7 @@ function App() {
 
   return (
     <main className="min-h-screen bg-[#FDFDFD]">
-      <HeroSlider onCollectionsClick={handleGoToCategories} />
+      <HeroSlider onCollectionsClick={handleGoToCategories} onAboutClick={handleGoToAbout} />
     </main>
   );
 }

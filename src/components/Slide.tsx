@@ -6,9 +6,10 @@ import { useEffect, useRef } from "react";
 interface SlideProps {
     perfume: Perfume;
     isActive: boolean;
+    onListenClick?: () => void;
 }
 
-export const Slide = ({ perfume, isActive }: SlideProps) => {
+export const Slide = ({ perfume, isActive, onListenClick }: SlideProps) => {
     const videoRef = useRef<HTMLVideoElement>(null);
 
     useEffect(() => {
@@ -90,7 +91,7 @@ export const Slide = ({ perfume, isActive }: SlideProps) => {
                                 <p className="text-xs uppercase tracking-[0.3em] opacity-50" style={{ color: perfume.colors.text }}>Композиция:</p>
                                 <p className="text-2xl font-display font-medium" style={{ color: perfume.colors.accent }}>{perfume.usp}</p>
                             </div>
-                            <button className="group relative px-10 py-5 bg-white text-black rounded-full font-bold text-lg shadow-2xl overflow-hidden active:scale-95 transition-all flex items-center gap-3 cursor-pointer">
+                            <button onClick={onListenClick} className="group relative px-10 py-5 bg-white text-black rounded-full font-bold text-lg shadow-2xl overflow-hidden active:scale-95 transition-all flex items-center gap-3 cursor-pointer">
                                 <span className="relative z-10 flex items-center gap-3">
                                     Послушать аромат <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                                 </span>
@@ -162,7 +163,7 @@ export const Slide = ({ perfume, isActive }: SlideProps) => {
                             <span className="text-[10px] uppercase tracking-widest opacity-50" style={{ color: perfume.colors.text }}>Ноты:</span>
                             <span className="text-xs font-semibold" style={{ color: perfume.colors.accent }}>{perfume.usp}</span>
                         </div>
-                        <button className="group relative w-auto px-8 py-4 bg-white text-black rounded-full font-bold text-sm shadow-2xl flex items-center justify-center gap-3 active:scale-95 transition-all cursor-pointer overflow-hidden min-w-[200px]">
+                        <button onClick={onListenClick} className="group relative w-auto px-8 py-4 bg-white text-black rounded-full font-bold text-sm shadow-2xl flex items-center justify-center gap-3 active:scale-95 transition-all cursor-pointer overflow-hidden min-w-[200px]">
                             <span className="relative z-10 flex items-center gap-2">
                                 Послушать аромат <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                             </span>

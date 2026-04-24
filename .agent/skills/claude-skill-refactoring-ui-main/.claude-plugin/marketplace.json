@@ -1,0 +1,26 @@
+{
+  "name": "ui-polish-marketplace",
+  "owner": {
+    "name": "Ayoub Hidri",
+    "email": "ayhid@users.noreply.github.com"
+  },
+  "metadata": {
+    "description": "UI design plugins for Claude Code"
+  },
+  "plugins": [
+    {
+      "name": "ui-polish",
+      "source": ".",
+      "description": "Professional UI design principles using Tailwind CSS and shadcn/ui. Apply Refactoring UI methodology for polished, professional interfaces.",
+      "version": "0.1.0",
+      "category": "frontend",
+      "tags": ["ui", "design", "tailwind", "shadcn", "react", "frontend"],
+      "author": {
+        "name": "Ayoub Hidri"
+      },
+      "homepage": "https://github.com/opkod-france/claude-skill-refactoring-ui",
+      "repository": "https://github.com/opkod-france/claude-skill-refactoring-ui",
+      "license": "MIT"
+    }
+  ]
+}

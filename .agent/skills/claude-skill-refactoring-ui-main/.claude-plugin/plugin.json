@@ -1,0 +1,11 @@
+{
+  "name": "ui-polish",
+  "version": "1.0.0",
+  "description": "Professional UI design principles using Tailwind CSS and shadcn/ui. Apply Refactoring UI methodology to create polished, professional interfaces.",
+  "author": {
+    "name": "Ayoub Hidri",
+    "email": "ayhid@users.noreply.github.com"
+  },
+  "commands": "./commands/",
+  "skills": "./skills/"
+}

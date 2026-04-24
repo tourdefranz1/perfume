@@ -1,0 +1,662 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "build_toolchain",
+        "label": "Build Toolchain",
+        "nodes": [
+          "readme_vite_react_template",
+          "readme_plugin_react_babel",
+          "readme_plugin_react_swc",
+          "readme_fast_refresh"
+        ],
+        "relation": "form",
+        "confidence": "EXTRACTED",
+        "confidence_score": 0.92,
+        "source_file": "README.md"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "eslint.config.js",
+      "file_type": "code",
+      "source_file": "eslint.config.js",
+      "source_location": "L1",
+      "id": "eslint_config_js",
+      "community": 11,
+      "norm_label": "eslint.config.js"
+    },
+    {
+      "label": "vite.config.ts",
+      "file_type": "code",
+      "source_file": "vite.config.ts",
+      "source_location": "L1",
+      "id": "vite_config_ts",
+      "community": 12,
+      "norm_label": "vite.config.ts"
+    },
+    {
+      "label": "postcss.config.js",
+      "file_type": "code",
+      "source_file": "postcss.config.js",
+      "source_location": "L1",
+      "id": "postcss_config_js",
+      "community": 13,
+      "norm_label": "postcss.config.js"
+    },
+    {
+      "label": "App.tsx",
+      "file_type": "code",
+      "source_file": "src/App.tsx",
+      "source_location": "L1",
+      "id": "src_app_tsx",
+      "community": 1,
+      "norm_label": "app.tsx"
+    },
+    {
+      "label": "App()",
+      "file_type": "code",
+      "source_file": "src/App.tsx",
+      "source_location": "L6",
+      "id": "app_app",
+      "community": 1,
+      "norm_label": "app()"
+    },
+    {
+      "label": "main.tsx",
+      "file_type": "code",
+      "source_file": "src/main.tsx",
+      "source_location": "L1",
+      "id": "src_main_tsx",
+      "community": 1,
+      "norm_label": "main.tsx"
+    },
+    {
+      "label": "vite-env.d.ts",
+      "file_type": "code",
+      "source_file": "src/vite-env.d.ts",
+      "source_location": "L1",
+      "id": "src_vite_env_d_ts",
+      "community": 14,
+      "norm_label": "vite-env.d.ts"
+    },
+    {
+      "label": "Slide.tsx",
+      "file_type": "code",
+      "source_file": "src/components/Slide.tsx",
+      "source_location": "L1",
+      "id": "src_components_slide_tsx",
+      "community": 2,
+      "norm_label": "slide.tsx"
+    },
+    {
+      "label": "startOnInteraction()",
+      "file_type": "code",
+      "source_file": "src/components/Slide.tsx",
+      "source_location": "L23",
+      "id": "slide_startoninteraction",
+      "community": 2,
+      "norm_label": "startoninteraction()"
+    },
+    {
+      "label": "Navigation.tsx",
+      "file_type": "code",
+      "source_file": "src/components/Navigation.tsx",
+      "source_location": "L1",
+      "id": "src_components_navigation_tsx",
+      "community": 3,
+      "norm_label": "navigation.tsx"
+    },
+    {
+      "label": "Navigation()",
+      "file_type": "code",
+      "source_file": "src/components/Navigation.tsx",
+      "source_location": "L7",
+      "id": "navigation_navigation",
+      "community": 3,
+      "norm_label": "navigation()"
+    },
+    {
+      "label": "HeroSlider.tsx",
+      "file_type": "code",
+      "source_file": "src/components/HeroSlider.tsx",
+      "source_location": "L1",
+      "id": "src_components_heroslider_tsx",
+      "community": 4,
+      "norm_label": "heroslider.tsx"
+    },
+    {
+      "label": "HeroSlider()",
+      "file_type": "code",
+      "source_file": "src/components/HeroSlider.tsx",
+      "source_location": "L12",
+      "id": "heroslider_heroslider",
+      "community": 4,
+      "norm_label": "heroslider()"
+    },
+    {
+      "label": "CatalogBentoGrid.tsx",
+      "file_type": "code",
+      "source_file": "src/components/catalog/CatalogBentoGrid.tsx",
+      "source_location": "L1",
+      "id": "src_components_catalog_catalogbentogrid_tsx",
+      "community": 5,
+      "norm_label": "catalogbentogrid.tsx"
+    },
+    {
+      "label": "CatalogBentoGrid()",
+      "file_type": "code",
+      "source_file": "src/components/catalog/CatalogBentoGrid.tsx",
+      "source_location": "L11",
+      "id": "catalogbentogrid_catalogbentogrid",
+      "community": 5,
+      "norm_label": "catalogbentogrid()"
+    },
+    {
+      "label": "NewsletterCard.tsx",
+      "file_type": "code",
+      "source_file": "src/components/catalog/NewsletterCard.tsx",
+      "source_location": "L1",
+      "id": "src_components_catalog_newslettercard_tsx",
+      "community": 6,
+      "norm_label": "newslettercard.tsx"
+    },
+    {
+      "label": "NewsletterCard()",
+      "file_type": "code",
+      "source_file": "src/components/catalog/NewsletterCard.tsx",
+      "source_location": "L4",
+      "id": "newslettercard_newslettercard",
+      "community": 6,
+      "norm_label": "newslettercard()"
+    },
+    {
+      "label": "DiscountBannerCard.tsx",
+      "file_type": "code",
+      "source_file": "src/components/catalog/DiscountBannerCard.tsx",
+      "source_location": "L1",
+      "id": "src_components_catalog_discountbannercard_tsx",
+      "community": 7,
+      "norm_label": "discountbannercard.tsx"
+    },
+    {
+      "label": "DiscountBannerCard()",
+      "file_type": "code",
+      "source_file": "src/components/catalog/DiscountBannerCard.tsx",
+      "source_location": "L8",
+      "id": "discountbannercard_discountbannercard",
+      "community": 7,
+      "norm_label": "discountbannercard()"
+    },
+    {
+      "label": "AllProductsCard.tsx",
+      "file_type": "code",
+      "source_file": "src/components/catalog/AllProductsCard.tsx",
+      "source_location": "L1",
+      "id": "src_components_catalog_allproductscard_tsx",
+      "community": 8,
+      "norm_label": "allproductscard.tsx"
+    },
+    {
+      "label": "AllProductsCard()",
+      "file_type": "code",
+      "source_file": "src/components/catalog/AllProductsCard.tsx",
+      "source_location": "L9",
+      "id": "allproductscard_allproductscard",
+      "community": 8,
+      "norm_label": "allproductscard()"
+    },
+    {
+      "label": "BrandBentoCard.tsx",
+      "file_type": "code",
+      "source_file": "src/components/catalog/BrandBentoCard.tsx",
+      "source_location": "L1",
+      "id": "src_components_catalog_brandbentocard_tsx",
+      "community": 9,
+      "norm_label": "brandbentocard.tsx"
+    },
+    {
+      "label": "BrandBentoCard()",
+      "file_type": "code",
+      "source_file": "src/components/catalog/BrandBentoCard.tsx",
+      "source_location": "L12",
+      "id": "brandbentocard_brandbentocard",
+      "community": 9,
+      "norm_label": "brandbentocard()"
+    },
+    {
+      "label": "CatalogPage.tsx",
+      "file_type": "code",
+      "source_file": "src/components/pages/CatalogPage.tsx",
+      "source_location": "L1",
+      "id": "src_components_pages_catalogpage_tsx",
+      "community": 15,
+      "norm_label": "catalogpage.tsx"
+    },
+    {
+      "label": "utils.ts",
+      "file_type": "code",
+      "source_file": "src/lib/utils.ts",
+      "source_location": "L1",
+      "id": "src_lib_utils_ts",
+      "community": 10,
+      "norm_label": "utils.ts"
+    },
+    {
+      "label": "cn()",
+      "file_type": "code",
+      "source_file": "src/lib/utils.ts",
+      "source_location": "L4",
+      "id": "utils_cn",
+      "community": 10,
+      "norm_label": "cn()"
+    },
+    {
+      "label": "brands.ts",
+      "file_type": "code",
+      "source_file": "src/data/brands.ts",
+      "source_location": "L1",
+      "id": "src_data_brands_ts",
+      "community": 16,
+      "norm_label": "brands.ts"
+    },
+    {
+      "label": "perfumes.ts",
+      "file_type": "code",
+      "source_file": "src/data/perfumes.ts",
+      "source_location": "L1",
+      "id": "src_data_perfumes_ts",
+      "community": 17,
+      "norm_label": "perfumes.ts"
+    },
+    {
+      "label": "Vite + React Template",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_vite_react_template",
+      "community": 0,
+      "norm_label": "vite + react template"
+    },
+    {
+      "label": "Fast Refresh (HMR)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_fast_refresh",
+      "community": 0,
+      "norm_label": "fast refresh (hmr)"
+    },
+    {
+      "label": "@vitejs/plugin-react (Babel)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_plugin_react_babel",
+      "community": 0,
+      "norm_label": "@vitejs/plugin-react (babel)"
+    },
+    {
+      "label": "@vitejs/plugin-react-swc (SWC)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_plugin_react_swc",
+      "community": 0,
+      "norm_label": "@vitejs/plugin-react-swc (swc)"
+    },
+    {
+      "label": "ESLint TypeScript Config",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_eslint_typescript",
+      "community": 0,
+      "norm_label": "eslint typescript config"
+    },
+    {
+      "label": "React Compiler",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_react_compiler",
+      "community": 0,
+      "norm_label": "react compiler"
+    },
+    {
+      "label": "Vite Logo (Lightning Bolt)",
+      "file_type": "image",
+      "source_file": "public/vite.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "vite_svg_logo",
+      "community": 0,
+      "norm_label": "vite logo (lightning bolt)"
+    },
+    {
+      "label": "React Logo (Atom / Blue)",
+      "file_type": "image",
+      "source_file": "src/assets/react.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "react_svg_logo",
+      "community": 0,
+      "norm_label": "react logo (atom / blue)"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "src_app_tsx",
+      "_tgt": "app_app",
+      "source": "src_app_tsx",
+      "target": "app_app",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "src_main_tsx",
+      "_tgt": "src_app_tsx",
+      "source": "src_app_tsx",
+      "target": "src_main_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Slide.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_src": "src_components_slide_tsx",
+      "_tgt": "slide_startoninteraction",
+      "source": "src_components_slide_tsx",
+      "target": "slide_startoninteraction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Navigation.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "src_components_navigation_tsx",
+      "_tgt": "navigation_navigation",
+      "source": "src_components_navigation_tsx",
+      "target": "navigation_navigation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/HeroSlider.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "src_components_heroslider_tsx",
+      "_tgt": "heroslider_heroslider",
+      "source": "src_components_heroslider_tsx",
+      "target": "heroslider_heroslider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/catalog/CatalogBentoGrid.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "src_components_catalog_catalogbentogrid_tsx",
+      "_tgt": "catalogbentogrid_catalogbentogrid",
+      "source": "src_components_catalog_catalogbentogrid_tsx",
+      "target": "catalogbentogrid_catalogbentogrid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/catalog/NewsletterCard.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "src_components_catalog_newslettercard_tsx",
+      "_tgt": "newslettercard_newslettercard",
+      "source": "src_components_catalog_newslettercard_tsx",
+      "target": "newslettercard_newslettercard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/catalog/DiscountBannerCard.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "src_components_catalog_discountbannercard_tsx",
+      "_tgt": "discountbannercard_discountbannercard",
+      "source": "src_components_catalog_discountbannercard_tsx",
+      "target": "discountbannercard_discountbannercard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/catalog/AllProductsCard.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "src_components_catalog_allproductscard_tsx",
+      "_tgt": "allproductscard_allproductscard",
+      "source": "src_components_catalog_allproductscard_tsx",
+      "target": "allproductscard_allproductscard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/catalog/BrandBentoCard.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "src_components_catalog_brandbentocard_tsx",
+      "_tgt": "brandbentocard_brandbentocard",
+      "source": "src_components_catalog_brandbentocard_tsx",
+      "target": "brandbentocard_brandbentocard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/utils.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "src_lib_utils_ts",
+      "_tgt": "utils_cn",
+      "source": "src_lib_utils_ts",
+      "target": "utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "readme_vite_react_template",
+      "_tgt": "readme_fast_refresh",
+      "source": "readme_vite_react_template",
+      "target": "readme_fast_refresh"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "readme_vite_react_template",
+      "_tgt": "readme_plugin_react_babel",
+      "source": "readme_vite_react_template",
+      "target": "readme_plugin_react_babel"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "readme_vite_react_template",
+      "_tgt": "readme_plugin_react_swc",
+      "source": "readme_vite_react_template",
+      "target": "readme_plugin_react_swc"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "readme_vite_react_template",
+      "_tgt": "readme_eslint_typescript",
+      "source": "readme_vite_react_template",
+      "target": "readme_eslint_typescript"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "readme_vite_react_template",
+      "_tgt": "readme_react_compiler",
+      "source": "readme_vite_react_template",
+      "target": "readme_react_compiler"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "public/vite.svg",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "vite_svg_logo",
+      "_tgt": "readme_vite_react_template",
+      "source": "readme_vite_react_template",
+      "target": "vite_svg_logo"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src/assets/react.svg",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "react_svg_logo",
+      "_tgt": "readme_vite_react_template",
+      "source": "readme_vite_react_template",
+      "target": "react_svg_logo"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "readme_plugin_react_babel",
+      "_tgt": "readme_fast_refresh",
+      "source": "readme_fast_refresh",
+      "target": "readme_plugin_react_babel"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "readme_plugin_react_swc",
+      "_tgt": "readme_fast_refresh",
+      "source": "readme_fast_refresh",
+      "target": "readme_plugin_react_swc"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "readme_plugin_react_babel",
+      "_tgt": "readme_plugin_react_swc",
+      "source": "readme_plugin_react_babel",
+      "target": "readme_plugin_react_swc"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "public/vite.svg",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "vite_svg_logo",
+      "_tgt": "react_svg_logo",
+      "source": "vite_svg_logo",
+      "target": "react_svg_logo"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "build_toolchain",
+      "label": "Build Toolchain",
+      "nodes": [
+        "readme_vite_react_template",
+        "readme_plugin_react_babel",
+        "readme_plugin_react_swc",
+        "readme_fast_refresh"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.92,
+      "source_file": "README.md"
+    }
+  ]
+}

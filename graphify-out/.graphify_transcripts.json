@@ -1,0 +1,4 @@
+  warning: could not transcribe src/assets/Creed.m4v: Video transcription requires faster-whisper. Run: pip install 'graphifyy[video]'
+  warning: could not transcribe src/assets/Kilian.mp4: Video transcription requires faster-whisper. Run: pip install 'graphifyy[video]'
+  warning: could not transcribe src/assets/Orchid.mp4: Video transcription requires faster-whisper. Run: pip install 'graphifyy[video]'
+[]
