@@ -5,7 +5,7 @@ interface NavigationProps {
     onAboutClick?: () => void;
 }
 
-export const Navigation = ({ onCollectionsClick, onAboutClick }: NavigationProps) => {
+export const Navigation = ({ onAboutClick }: NavigationProps) => {
     return (
         <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-4 md:px-12 py-4 md:py-6 mix-blend-difference text-white">
             <div className="text-lg md:text-xl font-bold font-display tracking-tighter cursor-pointer" onClick={() => window.location.reload()}>
