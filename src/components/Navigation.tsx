@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, Search, ShoppingBag, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface NavigationProps {
     onCollectionsClick?: () => void;
@@ -38,22 +39,46 @@ export const Navigation = ({ onAboutClick }: NavigationProps) => {
                 </button>
             </div>
 
-            {/* Mobile Menu Overlay */}
-            {isMobileMenuOpen && (
-                <div className="fixed inset-0 bg-[#0a0a0a] z-40 flex flex-col items-center justify-center gap-8 md:hidden">
-                    <a
-                        href="#"
-                        onClick={(e) => { 
-                            e.preventDefault(); 
-                            setIsMobileMenuOpen(false);
-                            onAboutClick?.(); 
-                        }}
-                        className="text-2xl font-display font-bold tracking-widest text-white hover:text-amber-400 transition-colors"
-                    >
-                        О БРЕНДЕ
-                    </a>
-                </div>
-            )}
+            {/* Mobile Menu Dropdown (Liquid Glass) */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <>
+                        {/* Invisible backdrop to close menu when clicking outside */}
+                        <motion.div 
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="fixed inset-0 z-40 md:hidden" 
+                            onClick={() => setIsMobileMenuOpen(false)} 
+                        />
+                        
+                        <motion.div 
+                            initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                            transition={{ duration: 0.3, ease: "easeOut" }}
+                            className="absolute top-[72px] right-4 w-[220px] z-50 md:hidden rounded-2xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col p-2"
+                            style={{ 
+                                background: 'rgba(255, 255, 255, 0.05)', 
+                                backdropFilter: 'blur(24px)',
+                                WebkitBackdropFilter: 'blur(24px)'
+                            }}
+                        >
+                            <a
+                                href="#"
+                                onClick={(e) => { 
+                                    e.preventDefault(); 
+                                    setIsMobileMenuOpen(false);
+                                    onAboutClick?.(); 
+                                }}
+                                className="flex items-center justify-center w-full px-4 py-4 rounded-xl text-sm font-bold tracking-widest text-white hover:bg-white/10 active:bg-white/20 transition-colors"
+                            >
+                                О БРЕНДЕ
+                            </a>
+                        </motion.div>
+                    </>
+                )}
+            </AnimatePresence>
         </nav>
     );
 };
