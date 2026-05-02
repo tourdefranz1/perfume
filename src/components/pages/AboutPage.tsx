@@ -51,7 +51,7 @@ export function AboutPage({ onBack }: AboutPageProps) {
                     <ArrowLeft className="w-4 h-4" />
                     <span className="hidden sm:inline">Назад</span>
                 </button>
-                <div className="text-base font-bold tracking-widest">RG_PERFUME</div>
+                <div className="text-base font-bold tracking-widest">RG_PARFUME</div>
                 <div className="w-[44px]" /> {/* Spacer to keep title centered or just empty space */}
             </nav>
 
@@ -138,7 +138,7 @@ export function AboutPage({ onBack }: AboutPageProps) {
                                 Наш путь начался с простой идеи: премиальная парфюмерия должна быть искусством, доступным тем, кто умеет ценить подлинную красоту и качество.
                             </p>
                             <p>
-                                RG Perfume — это больше, чем магазин. Это закрытый клуб ценителей селективных ароматов, где мы бережно отбираем каждый флакон, чтобы он стал продолжением вашей уникальной истории.
+                                RG Parfume — это больше, чем магазин. Это закрытый клуб ценителей селективных ароматов, где мы бережно отбираем каждый флакон, чтобы он стал продолжением вашей уникальной истории.
                             </p>
                             <p>
                                 Мы верим, что аромат — это самый тонкий инструмент самовыражения, способный менять настроение, пробуждать воспоминания и оставлять неизгладимый след в сердцах людей.
@@ -267,7 +267,7 @@ export function AboutPage({ onBack }: AboutPageProps) {
                 </motion.div>
 
                 <p className="text-white/20 text-xs tracking-widest mt-16 z-10">
-                    © {new Date().getFullYear()} RG PERFUME — LUXURY FRAGRANCE BOUTIQUE
+                    © {new Date().getFullYear()} RG PARFUME — LUXURY FRAGRANCE BOUTIQUE
                 </p>
             </section>
 

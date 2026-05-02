@@ -42,7 +42,7 @@ function App() {
       <div className="h-screen w-full bg-[#0a0a0a] text-white flex flex-col overflow-hidden">
         {/* Minimal Nav */}
         <nav className="flex items-center justify-between px-8 py-6 w-full max-w-[1600px] mx-auto z-50">
-          <div className="text-xl font-display font-black tracking-widest">PERFUME</div>
+          <div className="text-xl font-display font-black tracking-widest">RG_PARFUME</div>
           <button
             onClick={handleBackToHome}
             className="group flex items-center gap-2 text-zinc-500 hover:text-white transition-all duration-300 font-bold text-[10px] tracking-[0.2em]"
