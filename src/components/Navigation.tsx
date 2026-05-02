@@ -14,7 +14,7 @@ export const Navigation = ({ onAboutClick, onContactClick }: NavigationProps) =>
     return (
         <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-4 md:px-12 py-4 md:py-6 mix-blend-difference text-white">
             <div className="text-lg md:text-xl font-bold font-display tracking-tighter cursor-pointer relative z-50" onClick={() => window.location.reload()}>
-                RG_PERFUME
+                RG_PARFUME
             </div>
 
             <div className="hidden md:flex gap-8 text-sm font-medium tracking-wide opacity-80">
@@ -38,8 +38,8 @@ export const Navigation = ({ onAboutClick, onContactClick }: NavigationProps) =>
                 {/* Search hidden on mobile */}
                 <Search className="hidden md:block w-5 h-5 cursor-pointer hover:scale-110 transition-transform" aria-label="Поиск" />
                 <ShoppingBag className="w-5 h-5 cursor-pointer hover:scale-110 transition-transform" aria-label="Корзина" />
-                
-                <button 
+
+                <button
                     className="md:hidden p-1 cursor-pointer"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
@@ -52,32 +52,32 @@ export const Navigation = ({ onAboutClick, onContactClick }: NavigationProps) =>
                 {isMobileMenuOpen && (
                     <>
                         {/* Invisible backdrop to close menu when clicking outside */}
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            className="fixed inset-0 z-40 md:hidden" 
-                            onClick={() => setIsMobileMenuOpen(false)} 
+                            className="fixed inset-0 z-40 md:hidden"
+                            onClick={() => setIsMobileMenuOpen(false)}
                         />
-                        
-                        <motion.div 
+
+                        <motion.div
                             initial={{ opacity: 0, y: -10, scale: 0.95 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: -10, scale: 0.95 }}
                             transition={{ duration: 0.3, ease: "easeOut" }}
                             className="absolute top-[72px] right-4 w-[220px] z-50 md:hidden rounded-2xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col p-2 gap-1"
-                            style={{ 
-                                background: 'rgba(255, 255, 255, 0.05)', 
+                            style={{
+                                background: 'rgba(255, 255, 255, 0.05)',
                                 backdropFilter: 'blur(24px)',
                                 WebkitBackdropFilter: 'blur(24px)'
                             }}
                         >
                             <a
                                 href="#"
-                                onClick={(e) => { 
-                                    e.preventDefault(); 
+                                onClick={(e) => {
+                                    e.preventDefault();
                                     setIsMobileMenuOpen(false);
-                                    onAboutClick?.(); 
+                                    onAboutClick?.();
                                 }}
                                 className="flex items-center justify-center w-full px-4 py-4 rounded-xl text-sm font-bold tracking-widest text-white hover:bg-white/10 active:bg-white/20 transition-colors"
                             >
@@ -85,10 +85,10 @@ export const Navigation = ({ onAboutClick, onContactClick }: NavigationProps) =>
                             </a>
                             <a
                                 href="#"
-                                onClick={(e) => { 
-                                    e.preventDefault(); 
+                                onClick={(e) => {
+                                    e.preventDefault();
                                     setIsMobileMenuOpen(false);
-                                    onContactClick?.(); 
+                                    onContactClick?.();
                                 }}
                                 className="flex items-center justify-center w-full px-4 py-4 rounded-xl text-sm font-bold tracking-widest text-white hover:bg-white/10 active:bg-white/20 transition-colors"
                             >
